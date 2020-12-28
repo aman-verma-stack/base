@@ -1,0 +1,229 @@
+@import "../3-variables/theme";
+@import "../3-variables/variables";
+@import "../3-variables/mixins";
+@import "../1-modules/header";
+@import "../1-modules/footer";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+html {
+    font-size: 14px;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100%;
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    background: $white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+*,
+ul,
+ol {
+    outline: none;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+input[type="text"]::-ms-clear {
+    display: none;
+}
+
+::-ms-clear {
+    display: none;
+}
+
+::-webkit-search-decoration,
+::-webkit-search-cancel-button,
+::-webkit-search-results-button,
+::-webkit-search-results-decoration {
+    display: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+a,
+li,
+p {
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+
+.web_dis{
+    display: block;
+    @media (max-width: $break-sm) {
+        display: none;
+    }
+    @media (min-width: $break-sm) and (max-width: $break-md) {
+        display: none;
+    }
+
+    @media (min-width: $break-md-2) and (max-width: $break-md-3) {
+        display: block;
+    }
+
+    @media (min-width: $break-lg) and (max-width: $break-Xlg) {
+        display: block;
+    }
+    @media (min-width: $break-Xlg2) and (max-width: $break-Xlg3) {
+        display: block;
+    }
+}
+.mob_dis{
+    display: block;
+    @media (max-width: $break-sm) {
+        display: block;
+    }
+    @media (min-width: $break-sm) and (max-width: $break-md) {
+        display: block;
+    }
+
+    @media (min-width: $break-md-2) and (max-width: $break-md-3) {
+        display: none;
+    }
+
+    @media (min-width: $break-lg) and (max-width: $break-Xlg) {
+        display: none;
+    }
+    @media (min-width: $break-Xlg2) and (max-width: $break-Xlg3) {
+        display: none;
+    }
+    @media (min-width: $break-Xlg3){
+        display: none;
+    }
+}
+
+.custom_container {
+    @media (min-width: $break-XXlg) {
+        max-width: 1280px;
+    }
+    max-width: 90%;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+section{
+    padding: 20px 10px 20px 10px;
+    &.alternate{
+        background: $smoke;
+    }
+}
+
+.topHeading{
+    font-size: $font_36;
+    margin-bottom: 20px;
+}
+
+.subHeading{
+    font-size: $font_18;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.titleHeading{
+    font-size: $font_20;
+}
+
+.descriptionTitle{
+    font-size: $font_16;
+}
+
+.description{
+    font-size: $font_14;
+}
+
+.breadcrumbs{
+    .breadcrumbsList{
+        font-size: $font_14;
+        padding: 10px;
+        &:after{
+            content: '>';
+            position: relative;
+            left: 10px;
+            top: 1px;
+        }
+        &:last-child{
+            &::after{
+                display: none;
+            }
+        }
+    }
+}
+
+
+.custom_btn{
+    font-size: $font_16;
+    padding: 10px 20px;
+    cursor: pointer;
+    &.btn_primary{
+        background: $primaryColor;
+        color: $white;
+        border: 1px solid $primaryColor;
+        &:hover{
+            background: $primaryColor;
+        }
+    }
+    &.btn_secondary{
+        background: $secondaryColor;
+        border: 1px solid $secondaryColor;
+        color: $white;
+        &:hover{
+            background: $secondaryColor;
+        }
+    }
+    &.btn_outline{
+        background: transparent;
+        border: 1px solid $primaryColor;
+        color: $black;
+        &:hover{
+            background: $secondaryColor;
+            color: $white;
+        }
+    }
+    &:focus{
+        box-shadow: none;
+        outline: none;
+    }
+}
